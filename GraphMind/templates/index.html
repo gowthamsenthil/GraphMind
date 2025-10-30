@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Agentic TensorFlow Debugger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <h1>🤖 Agentic TensorFlow Debugger</h1>
+            <p>AI-Powered Debugging with ReAct Reasoning & Self-Learning</p>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="debug">💬 Debug Assistant</button>
+            <button class="tab-btn" data-tab="learning">🧠 Learning Dashboard</button>
+        </div>
+
+        <!-- Debug Tab -->
+        <div id="debug-tab" class="tab-content active">
+            <div class="chat-container">
+                <div id="chat-messages" class="chat-messages"></div>
+                
+                <div class="input-container">
+                    <textarea 
+                        id="error-input" 
+                        placeholder="Enter your TensorFlow error message or question..."
+                        rows="3"
+                    ></textarea>
+                    <button id="analyze-btn" class="primary-btn">
+                        <span class="btn-text">Analyze Error</span>
+                        <span class="btn-loading" style="display: none;">
+                            <span class="spinner"></span> Analyzing...
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Tab -->
+        <div id="learning-tab" class="tab-content">
+            <div class="learning-dashboard">
+                <h2>🧠 Agentic Learning Dashboard</h2>
+                <p class="subtitle">Watch the system evolve through ReAct-driven learning</p>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Total Interactions</div>
+                        <div class="stat-value" id="total-feedback">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Success Rate</div>
+                        <div class="stat-value" id="success-rate">0%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Learning Queue</div>
+                        <div class="stat-value" id="pending-updates">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Learned Docs</div>
+                        <div class="stat-value" id="learned-docs">0</div>
+                    </div>
+                </div>
+
+                <!-- System Stats -->
+                <div class="system-stats">
+                    <h3>📊 System Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Total Documents</div>
+                            <div class="stat-value" id="total-docs">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Graph Nodes</div>
+                            <div class="stat-value" id="graph-nodes">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Graph Edges</div>
+                            <div class="stat-value" id="graph-edges">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apply Learning Button -->
+                <div class="learning-actions">
+                    <button id="apply-learning-btn" class="primary-btn">
+                        <span class="btn-text">🧠 Apply ReAct Learning</span>
+                        <span class="btn-loading" style="display: none;">
+                            <span class="spinner"></span> Learning...
+                        </span>
+                    </button>
+                    <div id="learning-result" class="learning-result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
