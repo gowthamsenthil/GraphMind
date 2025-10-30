@@ -1,4 +1,4 @@
-# Agentic TensorFlow Debugger
+# GraphMind - Agentic TensorFlow Debugger
 
 AI-Powered TensorFlow Debugging with ReAct Reasoning & Self-Learning capabilities.
 
